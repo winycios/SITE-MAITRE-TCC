@@ -1,0 +1,62 @@
+models:
+  Categoria:
+    descCategoria: string unique
+
+  Restaurante:
+    nome: string
+    bairro: string
+    cidade: string
+    estado: string
+    foto: string:400 nullable
+    cardapio: string:500 nullable
+    cep: string
+    numero: integer
+    categoria_id: id foreign
+    user_id: id foreign
+
+  Avaliacao:
+    estrelas: integer
+    descAvaliacao: string
+    restaurante_id: id foreign
+
+  Mesas:
+    qtdMesas: integer
+    capMaxima: integer
+    mesasDisponiveis: integer
+    restaurante_id: id foreign
+
+  Horario:
+    abreAs: time
+    fechaAs: time
+    diasAberto: json
+    restaurante_id: id foreign
+
+  Cliente:
+    nome: string
+    endereco: string
+    estado: string
+    bairro: string
+    cidade: string
+    numero: integer
+    cpf: string unique
+    cep: string
+    user_id: id foreign
+
+  FoneCliente:
+    descFone: string
+    cliente_id: id foreign
+
+  Reserva:
+    data: datetime
+    qtdPessoas: integer
+    cliente_id: id foreign
+
+  MesaReserva:
+    reserva_id: id foreign
+    mesa_id: id foreign
+
+  Pratos:
+    nome: string
+    descPrato: string
+    valor: float
+    restaurante_id: id foreign

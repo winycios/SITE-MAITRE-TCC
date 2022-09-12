@@ -1,0 +1,6 @@
+models:
+    
+    FotoRestaurante:
+      foto: string:400 nullable
+      descFoto: string
+      restaurante_id: id foreign

@@ -1,0 +1,1 @@
+Olá, {{$user->name}}. Seja bem vindo ao MAÎTRE!

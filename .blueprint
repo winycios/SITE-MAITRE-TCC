@@ -1,0 +1,20 @@
+created:
+    - database/factories/FotoRestauranteFactory.php
+    - database/migrations/2022_05_20_003023_create_foto_restaurantes_table.php
+    - app/Models/FotoRestaurante.php
+models:
+    CategoriaRestaurante: { descCategoria: 'string unique' }
+    Restaurante: { nome: string, bairro: string, cidade: string, estado: string, foto: 'string:400 nullable', cardapio: 'string:500 nullable', cep: string, numero: integer, categoria_id: 'id foreign', user_id: 'id foreign' }
+    Avaliacao: { estrelas: integer, descAvaliacao: string, restaurante_id: 'id foreign' }
+    Mesas: { qtdMesas: integer, capMaxima: integer, mesasDisponiveis: integer, restaurante_id: 'id foreign' }
+    Horario: { horario: time }
+    Cliente: { nome: string, endereco: string, estado: string, bairro: string, cidade: string, numero: integer, cpf: 'string unique', cep: string, user_id: 'id foreign' }
+    FoneCliente: { descFone: string, cliente_id: 'id foreign' }
+    Reserva: { data: datetime, qtdPessoas: integer, cliente_id: 'id foreign' }
+    MesaReserva: { reserva_id: 'id foreign', mesa_id: 'id foreign' }
+    Pratos: { nome: string, descPrato: string, valor: float, restaurante_id: 'id foreign' }
+    Categoria: { descCategoria: 'string unique' }
+    DiaSemana: { diaSemana: string }
+    HorarioDia: { diaSemana_id: 'id foreign', horario_id: 'id foreign', restaurante_id: 'id foreign' }
+    StatusReserva: { descStatus: string }
+    FotoRestaurante: { foto: 'string:400 nullable', descFoto: string, restaurante_id: 'id foreign' }

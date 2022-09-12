@@ -1,0 +1,21 @@
+models:
+    
+    DiaSemana:
+      diaSemana: string
+
+    Horario:
+      horario: time
+
+    HorarioDia:
+      diaSemana_id: id foreign
+      horario_id: id foreign
+      restaurante_id: id foreign
+
+    StatusReserva:
+      descStatus: string
+
+    FotoRestaurante:
+      foto: string:400 nullable
+      descFoto: string
+      restaurante_id: id foreign
+  
